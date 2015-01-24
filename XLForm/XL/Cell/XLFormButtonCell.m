@@ -26,6 +26,8 @@
 #import "XLFormRowDescriptor.h"
 #import "XLFormButtonCell.h"
 
+static NSString * MerriweatherSansBoldFontFamily = @"MerriweatherSans-Bold";
+
 @implementation XLFormButtonCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -47,12 +49,16 @@
     self.textLabel.text = self.rowDescriptor.title;
     self.textLabel.textAlignment = self.rowDescriptor.buttonViewController ? NSTextAlignmentLeft : NSTextAlignmentCenter;
     self.accessoryType = self.rowDescriptor.buttonViewController ? UITableViewCellAccessoryDisclosureIndicator: UITableViewCellAccessoryNone;
-    self.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-    self.textLabel.textColor  = self.rowDescriptor.disabled ? [UIColor grayColor] : [UIColor blackColor];
+    self.textLabel.font = [self BTStandardSansSerifBoldFontWithSize:18];
+    self.textLabel.textColor  = [UIColor whiteColor];
     self.selectionStyle = self.rowDescriptor.disabled ? UITableViewCellSelectionStyleNone : UITableViewCellSelectionStyleDefault;
 
 }
 
+- (UIFont *)BTStandardSansSerifBoldFontWithSize:(NSInteger)size
+{
+    return [UIFont fontWithName:MerriweatherSansBoldFontFamily size:size];
+}
 
 -(void)formDescriptorCellDidSelectedWithFormController:(XLFormViewController *)controller
 {
