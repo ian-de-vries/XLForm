@@ -49,7 +49,7 @@ static NSString * MerriweatherSansBoldFontFamily = @"MerriweatherSans-Bold";
     self.textLabel.text = self.rowDescriptor.title;
     self.textLabel.textAlignment = self.rowDescriptor.buttonViewController ? NSTextAlignmentLeft : NSTextAlignmentCenter;
     self.accessoryType = self.rowDescriptor.buttonViewController ? UITableViewCellAccessoryDisclosureIndicator: UITableViewCellAccessoryNone;
-    self.textLabel.font = [self BTStandardSansSerifBoldFontWithSize:18];
+    self.textLabel.font = [self BTStandardSansSerifBoldFontWithSize:16];
     self.textLabel.textColor  = [UIColor whiteColor];
     self.selectionStyle = self.rowDescriptor.disabled ? UITableViewCellSelectionStyleNone : UITableViewCellSelectionStyleDefault;
 
